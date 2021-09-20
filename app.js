@@ -1,14 +1,43 @@
-
-const contact = {
-    avatar: "img/avatar.jpg",
-    name : "Nguyễn Văn Đức",
-    profession : "Web Developer",
+const contact_info = {
     birth : "18/04/1999",
     gender : "Nam",
     phone : "0965974599",
     mail : "nguyenduc180499@gmail.com",
     address : "Số nhà 16 - ngõ 506, Bạch Mai,Trương Định, Hai Bà Trưng, Hà Nội",
     web : "https://fb.com/duc.nv176723"
+};
+
+const contact = {
+    avatar: "img/avatar.jpg",
+    name : "Nguyễn Văn Đức",
+    profession : "Web Developer",
+    informations: [
+        {
+            icon: "far fa-calendar-alt",
+            text: contact_info.birth
+        },
+        {
+            icon: "fas fa-user",
+            text: contact_info.gender
+        },
+        {
+            icon: "fas fa-phone-square-alt",
+            text: contact_info.phone
+        },
+        {
+            icon: "fas fa-envelope-square",
+            text: contact_info.mail
+        },
+        {
+            icon: "fas fa-map-marker-alt",
+            text: contact_info.address
+        },
+        {
+            icon: "fas fa-link",
+            text: contact_info.web
+        } 
+    ]
+    
 };
 
 const education = {
@@ -18,8 +47,8 @@ const education = {
 };
 
 const languages = [
-    {name: "English", percent: "90%"},
-    {name: "Japan", percent: "65%"}
+    {name: "English", percent: "90%", style: "width: 90%;"},
+    {name: "Japan", percent: "65%", style: "width: 65%;"}
 ];
 
 const experiences = [
@@ -47,9 +76,9 @@ const experiences = [
 ];
 
 const skills = [
-    {name: "Html", percent: "90%"},
-    {name: "CSS", percent: "65%"},
-    {name: "Javascript", persent: "75%"}
+    {name: "Html", percent: "90%", style: "width: 90%;"},
+    {name: "CSS", percent: "65%", style: "width: 65%;"},
+    {name: "Javascript", percent: "75%", style: "width: 75%;"}
 ]
 
 var app = new Vue({

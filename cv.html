@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
         
-        <!-- <script src="app.js"></script> -->
+        
     </head>
     <body>
         
@@ -16,49 +16,17 @@
                 <div class="left-side">
                     <div class="profile-text">
                         <div class="imgBx">
-                            <img src={{contact.avatar}}>
+                            <img v-bind:src="contact.avatar">
                         </div>
-                        <div id="contact">
-                        <h2>{{ name }}<br><span>Web Developer</span></h2>
-                        </div>
+                        <h2>{{ contact.name }}<br><span>{{ contact.profession }}</span></h2>
                     </div>
                     <div class="contact-info">
                         <ul>
-                            <li>
+                            <li v-for="info in contact.informations">
                                 <span class="icon">
-                                    <i class="far fa-calendar-alt"></i>
+                                    <i v-bind:class="info.icon"></i>
                                 </span>
-                                <span class="text">18/04/99</span>
-                            </li>
-                            <li>
-                                <span class="icon">
-                                    <i class="fas fa-user"></i>
-                                </span>
-                                <span class="text">Nam</span>
-                            </li>
-                            <li>
-                                <span class="icon">
-                                    <i class="fas fa-phone-square-alt"></i>
-                                </span>
-                                <span class="text">0965974599</span>
-                            </li>
-                            <li>
-                                <span class="icon">
-                                    <i class="fas fa-envelope-square"></i>
-                                </span>
-                                <span class="text">nguyenduc180499@gmail.com</span>
-                            </li>
-                            <li>
-                                <span class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </span>
-                                <span class="text">Số nhà 16 - ngõ 506, Bạch Mai,Trương Định, Hai Bà Trưng, Hà Nội</span>
-                            </li>
-                            <li>
-                                <span class="icon">
-                                    <i class="fas fa-link"></i>
-                                </span>
-                                <span class="text">https://fb.com/duc.nv176723</span>
+                                <span class="text">{{ info.text }}</span>
                             </li>
                         </ul>
                     </div>
@@ -67,9 +35,9 @@
                         <h3 class="left-title">Education</h2>
                         <ul>
                             <li>
-                                <h5>2017 - Present</h5>
-                                <h4>Hanoi University of Science and Technolog</h4>
-                                <h4>Information Technology Specialist</h4>
+                                <h5>{{ education.year }}</h5>
+                                <h4>{{ education.school }}</h4>
+                                <h4>{{ education.category }}</h4>
                             </li>
                         </ul>
                     </div>
@@ -77,18 +45,13 @@
                     <div class="contact-info language">
                         <h3 class="left-title">Languages</h2>
                         <ul>
-                            <li>
-                                <span class="text">English</span>
+                            <li v-for="lang in languages">
+                                <span class="text"> {{ lang.name }}</span>
                                 <span class="percent">
-                                    <div style="width: 90%;"></div>
+                                    <div v-bind:style="lang.style"></div>
                                 </span>
                             </li>
-                            <li>
-                                <span class="text">Japan</span>
-                                <span class="percent">
-                                    <div style="width: 65%;"></div>
-                                </span>
-                            </li>
+                            
                         </ul>
                     </div>
 
@@ -108,78 +71,31 @@
 
                     <div class="about">
                         <h2 class="right-title">Experience</h2>
-                        <div class="box">
+                        <div class="box" v-for="exp in experiences">
                             <div class="year-company">
-                                <h5>2019 - 2020</h5>
-                                <h5>Company Name</h5>
+                                <h5>{{exp.year}}</h5>
+                                <h5>{{exp.company_name}}</h5>
                             </div>
                             <div class="text">
-                                <h4>Senior UX Designer</h4>
-                                <p>A developer is also known as a software developer, 
-                                    computer programmer, programmer, 
-                                    software coder or software engineer.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="year-company">
-                                <h5>2020 - 2021</h5>
-                                <h5>Company Name</h5>
-                            </div>
-                            <div class="text">
-                                <h4>Senior UX Designer</h4>
-                                <p>A developer is also known as a software developer, 
-                                    computer programmer, programmer, 
-                                    software coder or software engineer.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="year-company">
-                                <h5>2021 - Present</h5>
-                                <h5>Company Name</h5>
-                            </div>
-                            <div class="text">
-                                <h4>Senior UX Designer</h4>
-                                <p>A developer is also known as a software developer, 
-                                    computer programmer, programmer, 
-                                    software coder or software engineer.
-                                </p>
+                                <h4>{{exp.assume}}</h4>
+                                <p>{{exp.description}}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="about skills">
                         <h2 class="right-title">Professional Skills</h2>
-                        <div class="box">
-                            <h4>Html</h4>
+                        <div class="box" v-for="skill in skills">
+                            <h4>{{skill.name}}</h4>
                             <div class="percent">
-                                <div style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <h4>CSS</h4>
-                            <div class="percent">
-                                <div style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <h4>Javascript</h4>
-                            <div class="percent">
-                                <div style="width: 75%;"></div>
+                                <div v-bind:style="skill.style"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            var app = Vue({
-                el:"#contact",
-                data: {
-                    name: "Nguyen Van Duc"
-                }
-            });
-        </script>
+        
+        <script src="app.js"></script>
     </body>
 </html>
