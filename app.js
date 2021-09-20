@@ -81,6 +81,13 @@ const skills = [
     {name: "Javascript", percent: "75%", style: "width: 75%;"}
 ]
 
+const interests = [
+    {icon: "fas fa-gamepad", name: "Gaming"},
+    {icon: "fas fa-microphone-alt", name: "Singing"},
+    {icon: "fas fa-book", name: "Reading"},
+    {icon: "fas fa-utensils", name: "Cooking"}
+]
+
 var app = new Vue({
     el: "#app",
     data: {
@@ -88,6 +95,7 @@ var app = new Vue({
         education: education,
         languages: languages,
         experiences: experiences,
-        skills: skills
+        skills: skills,
+        interests: interests
     }
 });

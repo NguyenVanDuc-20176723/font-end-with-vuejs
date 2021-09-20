@@ -92,6 +92,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="about interest">
+                        <h2 class="right-title">Interest</h2>
+                        <ul>
+                            <li v-for="interest in interests">
+                                <i v-bind:class="interest.icon"></i>
+                                <span>{{interest.name}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
