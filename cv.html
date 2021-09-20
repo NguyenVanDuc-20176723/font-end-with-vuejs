@@ -3,19 +3,24 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CV using HTML & CSS</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
+        
+        <!-- <script src="app.js"></script> -->
     </head>
     <body>
+        
         <div id="app">
             <div class="container">
                 <div class="left-side">
                     <div class="profile-text">
                         <div class="imgBx">
-                            <img src="img/avatar.jpg">
+                            <img src={{contact.avatar}}>
                         </div>
-                        <h2>Nguyễn Văn Đức<br><span>Web Developer</span></h2>
+                        <div id="contact">
+                        <h2>{{ name }}<br><span>Web Developer</span></h2>
+                        </div>
                     </div>
                     <div class="contact-info">
                         <ul>
@@ -168,5 +173,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            var app = Vue({
+                el:"#contact",
+                data: {
+                    name: "Nguyen Van Duc"
+                }
+            });
+        </script>
     </body>
 </html>
