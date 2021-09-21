@@ -6,7 +6,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         
     </head>
     <body>
@@ -48,7 +48,7 @@
                             <li v-for="lang in languages">
                                 <span class="text"> {{ lang.name }}</span>
                                 <span class="percent">
-                                    <div v-bind:style="lang.style"></div>
+                                    <div v-bind:style="percent_style(lang.percent)"></div>
                                 </span>
                             </li>
                             
@@ -88,7 +88,7 @@
                         <div class="box" v-for="skill in skills">
                             <h4>{{skill.name}}</h4>
                             <div class="percent">
-                                <div v-bind:style="skill.style"></div>
+                                <div v-bind:style="percent_style(skill.percent)"></div>
                             </div>
                         </div>
                     </div>

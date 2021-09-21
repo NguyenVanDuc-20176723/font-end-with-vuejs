@@ -47,8 +47,8 @@ const education = {
 };
 
 const languages = [
-    {name: "English", percent: "90%", style: "width: 90%;"},
-    {name: "Japan", percent: "65%", style: "width: 65%;"}
+    {name: "English", percent: "90%"},
+    {name: "Japan", percent: "65%"}
 ];
 
 const experiences = [
@@ -76,9 +76,9 @@ const experiences = [
 ];
 
 const skills = [
-    {name: "Html", percent: "90%", style: "width: 90%;"},
-    {name: "CSS", percent: "65%", style: "width: 65%;"},
-    {name: "Javascript", percent: "75%", style: "width: 75%;"}
+    {name: "Html", percent: "90%"},
+    {name: "CSS", percent: "65%"},
+    {name: "Javascript", percent: "75%"}
 ]
 
 const interests = [
@@ -97,5 +97,10 @@ var app = new Vue({
         experiences: experiences,
         skills: skills,
         interests: interests
+    },
+    methods: {
+        percent_style: function(percent){
+            return `width: ${percent};`
+        }
     }
 });
