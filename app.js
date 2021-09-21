@@ -51,6 +51,17 @@ const languages = [
     {name: "Japan", percent: "65%"}
 ];
 
+const profile = 
+{
+    text: "A developer is an individual that builds and create \
+    software and applications. He or she writes,\
+    debugs and executes the source code of a software application.\n\n \
+    A developer is also known as a software developer, \
+    computer programmer, programmer, \
+    software coder or software engineer."
+}
+
+
 const experiences = [
     {
         year: "2019 - 2020",
@@ -94,6 +105,7 @@ var app = new Vue({
         contact: contact,
         education: education,
         languages: languages,
+        profile: profile,
         experiences: experiences,
         skills: skills,
         interests: interests
@@ -101,6 +113,9 @@ var app = new Vue({
     methods: {
         percent_style: function(percent){
             return `width: ${percent};`
+        },
+        about_proc: function(str) {
+            return str.replaceAll("\n", "<br>");
         }
     }
 });
